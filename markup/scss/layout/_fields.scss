@@ -1,0 +1,24 @@
+.field {
+
+	&-wrapper {
+
+		@include media('>=tablet') {
+			float: left;
+			width: calc(100% - 300px);
+		}
+	}
+
+	&-main {position: relative;
+		margin-bottom: 20px;
+		min-height: 500px;
+		border: $border-width solid $main-field-border-color;
+		// overflow: hidden;
+	}
+
+	&-bottom {
+		padding: 10px;
+		min-height: 150px;
+		display: flex;
+		border: $border-width solid $bottom-field-border-color;
+	}
+}
