@@ -56,14 +56,6 @@ function init() {
 					//  после загрузки колод аяксом
 					initSlickCarousel();
 
-
-					//обработчик клика по колоде в боковом поле
-					jQuery(self.options.storeField).single_double_click(function(e) {
-						if (jQuery(e.target).hasClass('deck')) self.takeCards(e.target, jQuery(e.target).data('slickIndex'));
-					}, function(e) {
-						if (jQuery(e.target).hasClass('deck')) self.takeCards(e.target, jQuery(e.target).data('slickIndex'));
-					})
-
 				}
 			});
 		},
@@ -82,51 +74,41 @@ function init() {
 				elem.box.push(new Card(null, val));
 			});
 
-			jQuery(elem.template).appendTo(self.options.storeField);
-
-			// обработчик двойного клика по колоде в боковом поле
-			// jQuery(elem.template).dblclick(function(e) {
-			// 	console.log(e);
-			// 	self.takeCards(elem, i, e);
-			// });
-
 			//обработчик клика по колоде в боковом поле
-			// jQuery(elem.template).click(function(e) {
-			// 	console.log(e);
-			// 	self.takeCards(elem, i, e);
-			// });
-			// console.log($.fn.single_double_click);
 
-			// jQuery(elem.template).single_double_click(function () {
-			// 	  alert("Try double-clicking me!")
-			// 	}, function () {
-			// 	  alert("Double click detected, I'm hiding")
-			// 	  $(this).hide()
-			// 	})
+			jQuery(elem.template).single_double_click(function (e) {
+				  self.takeCards(elem, i, true);
+				}, function (e) {
+				  self.takeCards(elem, i, false);
+				}).appendTo(self.options.storeField);
 		},
 
-		takeCards: function(elem, index) {
-			console.log(jQuery(elem).data('card'));
+		takeCards: function(elem, index, flag) {
 			const self = this;
-			// const box = jQuery(elem).box;
-			// self.shuffle(box);
+			console.log(elem.box);
+			const box = elem.box;
+			self.shuffle(box);
 
 			jQuery(self.options.bottomField).html("");
 
-			// jQuery.each(box, function(i, val) {
+			jQuery.each(box, function(i, val) {
+				if(!flag) {
+					val.template = "<div style='background-image: url(images/deck-" + (index + 1) + "/img-" + val.id + ".png);'></div>";
+				} else {
+					val.template = "<div style='background-image: url(images/deck-" + (index + 1) + "/back.png);'></div>";
+				}
 
-			// 	val.template = "<div style='background-image: url(images/deck-" + (index + 1) + "/img-" + val.id + ".png);'></div>";
-			// 	const elem = jQuery(val.template);
-			// 	jQuery(elem).data("card", val);
+				const elem = jQuery(val.template);
+				jQuery(elem).data("card", val);
 
-			// 	if (jQuery(elem).data("card").placement === "aside") {
-			// 		elem.addClass('card ui-motion-card').appendTo(self.options.bottomField).draggable({
-			// 			revert: "invalid",
-			// 			stack:".card"
-			// 		});
-			// 	}
+				if (jQuery(elem).data("card").placement === "aside") {
+					elem.addClass('card ui-motion-card').appendTo(self.options.bottomField).draggable({
+						revert: "invalid",
+						stack:".card"
+					});
+				}
 
-			// });
+			});
 		},
 
 
@@ -244,7 +226,7 @@ function init() {
 			}
 		}
 		this.template = template || "<div/>"; // по умолчанию div
-		this.data("card", '');
+		// this.data("card", '');
 	};
 
 		// Функция-конструктор колоды
