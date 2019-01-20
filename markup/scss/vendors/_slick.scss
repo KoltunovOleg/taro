@@ -90,3 +90,28 @@
 // .slick-arrow.slick-hidden {
 //     display: none;
 // }
+
+.slick-arrow {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50% 50%;
+    text-indent: -9999px;
+    border: 0;
+    height: 100px;
+    width: 110px;
+    outline: 0;
+
+    &.slick-prev {
+        background-image: url(../images/addition/vensel.svg);
+        transform: rotate(180deg);
+    }
+
+    &.slick-next {
+        background-image: url(../images/addition/vensel.svg);
+    }
+
+    &:hover {
+        opacity: .7;
+    }
+}

@@ -1,7 +1,9 @@
 #wrapper {
   width: 100%;
   position: relative;
+  height: 100vh;
   overflow: hidden;
+  background-image: url(../images/addition/img-bg-01.jpg);
 }
 
 .container {
@@ -18,7 +20,8 @@
   display: block;
   -ms-touch-action: none;
   touch-action: none;
-  background-color: blue;
+  // background-color: blue;
+  border: 2px solid gray;
 }
 .ui-resizable-disabled .ui-resizable-handle,
 .ui-resizable-autohide .ui-resizable-handle {
@@ -52,26 +55,15 @@
   top: 0;
   height: 100%;
 }
-.ui-resizable-se {
-  cursor: se-resize;
-  width: 9px;
-  height: 9px;
-  right: 0px;
-  bottom: 0px;
-}
-.ui-resizable-sw {
-  cursor: sw-resize;
-  width: 9px;
-  height: 9px;
-  left: 0px;
-  bottom: 0px;
-}
 .ui-resizable-nw {
   cursor: nw-resize;
   width: 9px;
   height: 9px;
-  left: 0x;
+  left: 0px;
   top: 0px;
+  border-right: 0;
+  border-bottom: 0;
+  border-radius: 85% 0 0 0;
 }
 .ui-resizable-ne {
   cursor: ne-resize;
@@ -79,4 +71,27 @@
   height: 9px;
   right: 0px;
   top: 0px;
+  border-bottom: 0;
+  border-left: 0;
+  border-radius:  0 85% 0 0;
+}
+.ui-resizable-se {
+  cursor: se-resize;
+  width: 9px;
+  height: 9px;
+  right: 0px;
+  bottom: 0px;
+  border-top: 0;
+  border-left: 0;
+  border-radius: 0 0 85% 0;
+}
+.ui-resizable-sw {
+  cursor: sw-resize;
+  width: 9px;
+  height: 9px;
+  left: 0px;
+  bottom: 0px;
+  border-right: 0;
+  border-top: 0;
+  border-radius: 0 0 0 85%;
 }

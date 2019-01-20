@@ -1,19 +1,21 @@
 .deck {
-  margin-bottom: 10px;
-  width: 150px;
-  height: 211px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 50%;
-  cursor: pointer;
+	margin-bottom: 10px;
+	width: 150px;
+	height: 211px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
+	cursor: pointer;
 }
 
 .card {
-  margin: 0 10px;
-  width: 80px;
-  height: 120px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 50%;
-  cursor: pointer;
+	margin: 0 10px;
+	width: 80px;
+	height: 120px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
+	cursor: pointer;
+	box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.4);
+	border-radius: 10px;
 }

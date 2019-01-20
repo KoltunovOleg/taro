@@ -213,15 +213,7 @@ function init() {
 
 		destroy: function() {
 			var self = this;
-
-			this.$tabLinks.off('.tabset').each(function() {
-				var $link = $(this);
-
-				self.getClassTarget($link).removeClass(self.options.activeClass);
-				$($link.attr(self.options.attrib)).removeClass(self.options.activeClass + ' ' + self.options.tabHiddenClass);
-			});
-
-			this.$holder.removeData('Tabset');
+			// здесь еще ничего нет
 		},
 
 		makeCallback: function(name) {
