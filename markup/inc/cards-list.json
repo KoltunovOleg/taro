@@ -7,27 +7,32 @@
 	{
 		"id": "1",
 		"state": "back",
-		"placement": "aside"
+		"placement": "aside",
+		"deckId": "1"
 	},
 	{
 			"id": "2",
 			"state": "back",
-			"placement": "aside"
+			"placement": "aside",
+			"deckId": "1"
 	},
 	{
 			"id": "3",
 			"state": "back",
-			"placement": "aside"
+			"placement": "aside",
+			"deckId": "1"
 	},
 	{
 			"id": "4",
 			"state": "back",
-			"placement": "aside"
+			"placement": "aside",
+			"deckId": "1"
 	},
 	{
 			"id": "5",
 			"state": "back",
-			"placement": "aside"
+			"placement": "aside",
+			"deckId": "1"
 	}]
 },
 {
@@ -38,27 +43,32 @@
 	{
 		"id": "1",
 		"state": "back",
-		"placement": "aside"
+		"placement": "aside",
+		"deckId": "2"
 	},
 	{
 			"id": "2",
 			"state": "back",
-			"placement": "aside"
+			"placement": "aside",
+			"deckId": "2"
 	},
 	{
 			"id": "3",
 			"state": "back",
-			"placement": "aside"
+			"placement": "aside",
+			"deckId": "2"
 	},
 	{
 			"id": "4",
 			"state": "back",
-			"placement": "aside"
+			"placement": "aside",
+			"deckId": "2"
 	},
 	{
 			"id": "5",
 			"state": "back",
-			"placement": "aside"
+			"placement": "aside",
+			"deckId": "2"
 	}]
 },
 {
@@ -69,26 +79,31 @@
 	{
 		"id": "1",
 		"state": "back",
-		"placement": "aside"
+		"placement": "aside",
+		"deckId": "3"
 	},
 	{
 			"id": "2",
 			"state": "back",
-			"placement": "aside"
+			"placement": "aside",
+			"deckId": "3"
 	},
 	{
 			"id": "3",
 			"state": "back",
-			"placement": "aside"
+			"placement": "aside",
+			"deckId": "3"
 	},
 	{
 			"id": "4",
 			"state": "back",
-			"placement": "aside"
+			"placement": "aside",
+			"deckId": "3"
 	},
 	{
 			"id": "5",
 			"state": "back",
-			"placement": "aside"
+			"placement": "aside",
+			"deckId": "3"
 	}]
 }]

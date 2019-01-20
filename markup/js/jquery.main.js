@@ -85,7 +85,6 @@ function init() {
 
 		takeCards: function(elem, index, flag) {
 			const self = this;
-			console.log(elem.box);
 			const box = elem.box;
 			self.shuffle(box);
 
@@ -94,8 +93,10 @@ function init() {
 			jQuery.each(box, function(i, val) {
 				if(!flag) {
 					val.template = "<div style='background-image: url(images/deck-" + (index + 1) + "/img-" + val.id + ".png);'></div>";
+					val.state = 'front';
 				} else {
 					val.template = "<div style='background-image: url(images/deck-" + (index + 1) + "/back.png);'></div>";
+					val.state = 'back';
 				}
 
 				const elem = jQuery(val.template);
@@ -143,7 +144,22 @@ function init() {
 
 					// Удаление элемента из нижнего поля и помещение в главное поле после отпускания кнопки мыши
 					//  с элемнтом-картой над дроп-полем (#main-field)
-					ui.draggable.detach().appendTo(self.options.mainField).addClass('ui-mainField-card');
+					ui.draggable.detach().appendTo(self.options.mainField)
+					.addClass('ui-mainField-card').dblclick(function(e) {
+						// перевернуть карту в основном поле по двойному клику
+						// рубашкой вверх или вниз
+						const index = parseInt(jQuery(this).data('card').deckId);
+
+						if(jQuery(this).data('card').state === 'front') {
+							jQuery(this).css('background-image', "url(images/deck-" + index + "/back.png )");
+							jQuery(this).data('card').state = 'back';
+
+						} else {
+							const id = parseInt(jQuery(this).data('card').id);
+							jQuery(this).css('background-image', "url(images/deck-" + index + "/img-" + id + ".png )");
+							jQuery(this).data('card').state = 'front';
+						}
+					});
 
 					//  Определение координат переносимого элемента(карты)
 					//  после помеденеия его в drop-поле (#main-field)
